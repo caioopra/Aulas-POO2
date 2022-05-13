@@ -1,0 +1,55 @@
+- ASSOCIAÇÃO
+-> descreve relação entre diferentes objetos (binária, mais comum, ou enárias)
+
+-> nome da associação sobre a reta da seta
+	-> pode indicar a direção ou não (mas dá para entender sem, mas auxilia a compreender)
+-> multiplicidade (lido de onde começa para onde vai)
+	-> * ou 0..* : muitos/vários/zero
+	-> 1..* : um ou mais
+	-> 0..1 : zero ou um
+	-> 1 : exatamente um (ou outro valor)
+	-> 2..4, 6..8 : faixa especificada (quaisquer valor)
+-> navegabilidade: direção da seta
+	-> nada ou x = unidirecional (a que tem x ou nada consegue acessar o outro, mas não o contrário)
+		-> implementação: indica que há ponteiro para o outro objeto
+	-> seta dos dois lados = bidirecional (chega de um ao outro)
+	-> sem setas nem x = bidirecional ou não determinada
+-> nome do papel: no fim da ligação entre as classes (qual papel a instância tem em relação à outra)
+	-> costuma ser o nome do atributo que as liga, normalmente indicando já a visibilidade
+
+-> pode descrever sem a seta, só indicando usando os nomes (7:50 https://www.youtube.com/watch?v=yjbPWpGtKaY)
+
+-> classes associativas: permitem adicionar atributos e operações a relacionamento entre classes
+	-> ficam entre outras duas classes
+	-> útil para implementar relações bidirecionais (dá consistência)
+	-> linha pontilhada que leva à essa classe, saindo da linha entre as classes
+
+
+-> dois tipos específicos de associação: agregação e composição
+
+
+AGREGAÇÃO
+-> objetos da classe B são partes da classe A
+-> partes (B) podem existir sem o todo(A) -> podem ser compartilhados entre diferentes objetos da classe A
+-> losango NÃO PREENCHIDO  -> sai da parte e vai para o todo (aonde tem o losango)
+
+
+COMPOSIÇÃO
+-> objetos da classe B são partes da classe A, mas não partes (B) existem sem o todo (A)
+-> losango PREENCHIDO -> sai da parte e vai para o todo (com o losango)
+-> exclusividade (no UML, não representa multiplicidade, mas é 1)
+
+
+
+- GENERALIZAÇÃO (Herança)
+-> agrupar características e associações comuns para classes gerais
+-> pode especificar/especializar as classes depois
+
+-> classe pai/ super classe  => classe geral
+-> classe filho
+
+-> representação com seta triangular não preenchida (sai da especializada e aponta para a super)
+-> classe filho é do tipo da do pai (tipagem de dados)
+	-> o contrário não é verdade (especializada é do tipo pai, mas não o contrário)
+-> herda atributos e métodos
+

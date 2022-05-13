@@ -1,0 +1,29 @@
+array = área contínua de memória (armazena endereço pra primeira posição (C))
+listas em python são arrays que armazenam endereços para objetos (dados heterogêneos)
+
+enumerate(lista)
+    -> retorna índice e valor em cima de lista
+for i, prog in enumerate(lista): ...
+
+-> copiar lista:
+    listaNova = list(listaAntiga)
+              = listaAntiga.copy()
+              = listaAntinga[:]
+              = copy.deepcopy(listaAntinga)
+                  -> lista de listas; import copy
+                  -> mesmo com copy, se usar só copy e tiver lista dentro, vai copiar esse endereço e não o dado (shallow copy)
+                  
+                  
+-> lista.pop(0) => remove o primeir
+-> lista.pop()  => remove o último (pop(-1))
+
+-> conjuntos: set() ou {}
+
+
+
+
+ a = (1, 2, 3)
+>>> b = (9,)
+>>> tupla = a[:2] + b + a[2:]
+>>> tupla
+(1, 2, 9, 3)

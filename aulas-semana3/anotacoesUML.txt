@@ -1,0 +1,35 @@
+-Diagrama de classes
+-> descreve elementos e suas características; relacionamentos entre as classes
+-> diferentes níveis de complexidade/abstração
+
+
+
+- DIAGRAMA DE OBJETOS
+-> snapshot do sistema em determinado momento
+-> descreve objetos e como se relacionam (sem detalhar)
+	-> mostra atributos, carac. e até atributos
+	-> mostra a relação mas não de qual tipo é
+
+-> notação
+	-> identificador:  (identificador do objeto (id único))
+	-> :NomeDaClasse   (de qual classe é instancia)
+	-> retângulo inferior: atributos e valores
+	-> relacionamentos  (entre as classs)
+-> não necessariamente precisa mostrar todos esses elementos no diagrama
+	-> pode ter apenas id, apenas classe (com : antes)
+	-> os dois mas sem atributos
+	-> combinação dos atributos com os anteriores ou completo
+
+
+- DIAGRAMA DE CLASSES
+-> 3 compartimentos no desenho do diagrama (Classe | atributos | métodos)
+	
+-> visibilidade -> / -> nomeAtributo (obrigatório) -> : -> tipo -> multiplicidade -> = -> defaultValue -> { -> propriedades -> , (se for colocar mais atributos -> } ->
+	
+	-> / (ex: /idade: ...) representa atributos derivados de outros atributos
+	-> com a multiplicidade, pode dizer se é uma lista e seu tamanho ou se é valor único
+	-> tipos de visibilidade: 
+		+  => público
+		-  => privados (só essa classe consegue acessar, nem com classes que a herdam)
+		#  => protegido (subclasses, classes que herdam, conseguem acessar)
+		~  => de pacote

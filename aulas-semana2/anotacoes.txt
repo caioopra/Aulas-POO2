@@ -1,0 +1,83 @@
+-> para classes, usar UpperCamelCase
+-> atributos definidos dentro do construtor __init__
+
+-> self.__atributo => deixa atributo privado (__nome)
+
+-> decorators (@):
+	@property		=> para quando quer retornar o valor de um atributo (getter)
+	def nomeAtributo(self):
+		return self.__nomeAtributo
+
+	@nomeProp.setter
+	def nomeAtributo(self, nomeAtributo):		=> alterar valor de atributo (setter)
+		self.__nomeAtributo = nomeAtributo
+
+-> importante uso de métodos para settar os valores e não fazer isso diretamente para evitar que problemas ou impossibilidades ocorram (como valores incorretos ou impossíveis)
+
+
+
+-----
+Introdução - Listas, dicionários e similares em Python
+
+-> listas encadeadas: nodo que armazena valor e ponteiro pra próximo nodo
+	-> identificador da lista aponta para o primeiro nodo
+
+-> listas em python: arrays = áreas contínuas de memória com índice em cada um
+	-> abstração de listas, implementadas com arrays
+	-> memória pré alocada e, quando adiciona algo na lista, aumenta o espaço
+	-> coleções heterogênas de objetos (diferentes tipos de dados e até outras listas)
+	-> operação slice
+	-> mutáveis usando os índices
+
+	-> importante fazer a cópia da lista e não apenas atribuir a nova variável (como variavel = lista)
+		-> invés disso, fazer: novaLista = lista[:]
+			-> copia todos valores para dentro da novaLista, se não teria apenas referência do espaço de memória
+
+-> tuplas: listas imutáveis	=> ()
+	-> podem ser convertidas em listas e vice-versa
+	-> pode ter elementos mutáveis, mas não podem ser re-atribuídos
+	-> pode fazer hash
+
+-> sets e frozensets
+	-> sequência sem repetição não ordenada
+	-> set: mutável
+	-> frozenset: imutável
+	-> implementam operações de conjuntos (uniõa, intersec, dif)
+
+-> dicionários
+	-> listas de associações
+	-> chave única => valor (qualquer tipo)
+	-> mutável
+	-> chave precisa ser imutável (como string)
+	-> python não garante ordenação das chaves ou preservação da ordem
+
+	-> necessário usar .copy() quando quiser copiar um dicionário
+		-> novoDic = dic1.copy()
+
+----- 
+Tipos de dados
+
+-> inteiros
+	-> operações bit-a-bit  (bin(valor) para ver em binário):
+		<<   => deslocamento pra esquerda
+		>>   => deslocamento para direita
+		&    => E bit-a-bit
+		|    => OU bit-a-bit
+	 	^    => XOR bit-a-bit
+ 	        ~    => inversão
+
+-> strings
+	-> símbolos usados na interpolação (%) para concatenação
+		%s: string
+		%d: inteiro
+		%o: octal
+		%x: hexadecimal
+		%f: real
+		%e: real exponencial
+		%%: sinal de porcentagem
+
+-> bool (especialização de int)
+	-> falso: False, None, 0, "", [], (), {}, outras estruturas com tamanho=0
+		-> None é do tipo NoneType, representa o nulo e vale como falso
+	-> verdadeiro: todos fora da lista de falsos
+	
