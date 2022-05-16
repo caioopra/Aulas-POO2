@@ -3,20 +3,20 @@ from abc import ABC, abstractmethod
 
 class Animal(ABC):
     @abstractmethod
-    def __init__(self, tamanhoPasso: int):
-        self.__tamanhoPasso = tamanhoPasso
+    def __init__(self, tamanho_passo: int):
+        self.__tamanho_passo = tamanho_passo
 
+    @property
+    def tamanho_passo(self):
+        return self.__tamanho_passo
+
+    @tamanho_passo.setter
+    def tamanho_passo(self, tamanho_passo: int) -> int:
+        self.__tamanho_passo = tamanho_passo
+
+    def mover(self):
+        return "ANIMAL: DESLOCOU {}".format(self.tamanho_passo) 
+        
     @abstractmethod
     def produzir_som(self):
         pass
-
-    @property
-    def tamanhoPasso(self):
-        return self.__tamanhoPasso
-
-    @tamanhoPasso.setter
-    def tamanhoPasso(self, tamanhoPasso: int) -> int:
-        self.__tamanhoPasso = tamanhoPasso
-
-    def mover(self):
-        print("ANIMAL:DESLOCOU", self.tamanhoPasso)
