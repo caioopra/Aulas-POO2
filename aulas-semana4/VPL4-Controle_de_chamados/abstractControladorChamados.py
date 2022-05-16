@@ -21,7 +21,7 @@ class AbstractControladorChamados(ABC):
 	# @param descricao descricao do chamado
 	# @param prioridade prioridade do chamado
 	# @param tipo tipo do chamado (TipoChamado)
-	# @return retorna o chamato cadastrado
+	# @return retorna o chamado cadastrado
 	@abstractmethod
 	def incluiChamado(self, data: Date, cliente: Cliente, tecnico: Tecnico, titulo: str, descricao: str, prioridade: int, tipo: TipoChamado) -> Chamado:
 			pass

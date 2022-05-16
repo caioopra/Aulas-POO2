@@ -6,15 +6,15 @@ class TipoChamado(AbstractTipoChamado):
         self.__codigo = codigo
         self.__descricao = descricao
         self.__nome = nome
-        
+
     @property
     def codigo(self):
         return self.__codigo
-    
+
     @property
     def descricao(self):
         return self.__descricao
-    
+
     @property
     def nome(self):
         return self.__nome
