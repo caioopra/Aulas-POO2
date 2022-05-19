@@ -1,0 +1,24 @@
+Escreva uma funcao que conta a frequencia de ocorrencia de cada
+palavra em um texto arquivo txt e armazena tal quantidade em um dicionario, onde a
+chave a a vogal considerada.
+Escreva um programa que le duas notas de varios alunos e armazena tais
+notas em um dicionario, onde a chave e o nome do aluno. A entrada de dados deve
+terminar quando for lida uma string vazia como nome. Escreva uma funcao que retorna
+a media do aluno, dado seu nome.
+Uma pista de Kart permite 10 voltas para cada um de 6 corredores.
+Escreva um programa que leia todos os tempos em segundos e os guarde em um
+dicionario, onde a chave e o nome do corredor. Ao final diga de quem foi a melhor volta
+da prova e em que volta e ainda a classificacao final em ordem o campeao. O
+campeao e o que tem a menor media de tempos.
+Escreva um programa para armazenar uma agenda de telefones usando
+um dicionario. Cada pessoa pode ter um ou mais telefones e a chave do dicionario e o
+nome completo da pessoa. Seu programa deve ter as seguintes
+Criar 10 frozensets com 30 numeros aleatorios cada, e construir um
+dicionario que contenha a soma de cada um deles
+mplemente a classe MeuDicionario usando duas listas, uma para chave e
+uma para valores. Deve ser possivel inserir, remover e acessar elementos no dicionario
+(use magic methods), alem de verificar se um valor encontra-se no dicionario (em caso
+positivo, retorna a chave correspondente, caso contrario retorna False)
+Crie uma classe MatrizEsparsa que pode ser construida das duas formas
+abaixo, e contenha metodos para mostrar a matriz no formato String e tambem no
+formato de dicionario.
