@@ -8,7 +8,7 @@ class Transporte(ABC):
         self.__comprimento = comprimento
         self.__carga = carga
         self.__velocidade = velocidade
-    
+
     def descricaoGenerica(self):
         return f"{self.__nome}, possui {self.__altura} metros de altura e {self.__comprimento} de comprimento. Com {self.__velocidade}km/h de velocidade maxima e carga maxima de {self.__carga} toneladas."
 
@@ -18,10 +18,9 @@ class TransporteAreo(Transporte):
         super().__init__(nome, altura, comprimento, carga, velocidade)
         self.__autonomia = autonomia
         self.__envergadura = envergadura
-    
+
     def descricao(self) -> str:
         return super().descricaoGenerica() + f"Possui {self.__autonomia} km de autonomia e {self.__envergadura} metros de envergadura."
-        
 
 
 class TransporteTerrestre(Transporte):
@@ -34,7 +33,6 @@ class TransporteTerrestre(Transporte):
         return super().descricaoGenerica() + f"Possui motor {self.__motor} e rodas {self.__rodas}."
 
 
-
 class TransporteAquatico(Transporte):
     def __init__(self, nome, altura, comprimento, carga, velocidade, boca, calado):
         super().__init__(nome, altura, comprimento, carga, velocidade)
@@ -43,7 +41,6 @@ class TransporteAquatico(Transporte):
 
     def descricao(self) -> str:
         return super().descricaoGenerica() + f"Possui {self.__boca} metros de boca e {self.__calado} metros de calado."
-
 
 
 class Catalogo:
@@ -55,7 +52,7 @@ class Catalogo:
             self.__listaTransportes.append(transporte)
         else:
             print("Transporte inválido")
-    
+
     def apresentacao(self):
         for transporte in self.__listaTransportes:
             print(transporte.descricao())
