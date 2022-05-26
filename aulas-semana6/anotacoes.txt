@@ -1,0 +1,82 @@
+24/05
+
+Technical debt = custo implícito por escolhas fáceis ao invés de uma melhorada que leve mais tempo
+
+SOLID: 5 conceitos
+Single Responsability
+Open-closed
+Liskov Substitution
+Inteface segregation
+Dependency inversion
+
+
+- Single Responsability: uma classe deve ter uma responsabilidade (uma das mudanças nas especificações exgem mudancças na implementação)
+	-> não precisar mudar outras classes quando alterar uma
+- Open-closed: classes devem estar abertas para extensão, mas fechadas para modificaçaõ
+	-> não mudar a classe para implementar algo novo
+- Liskov Substitution: classes base devem ser substituíveis de suas classes derivadas sem alterar a corretudo do programa
+	-> deve poder conseguir trocar uma classe base por uma derivada sua e ainda sim continuar
+- Interface Segregation: interfaces específicas do cliente são melhores que uma inerface genérica
+	-> não criar um geral e usar sempre (manter coesão)
+- Dependency Inversion: deve ter depednências em abstrações, não em implementações concretas
+
+
+
+SRP = Single Responsability Principle
+-> cada modulo, classe ou funcao, deve ter responsabilidade sobre uma única funcionalidade do sistema
+-> um classe deve ter somente um motivo para mudar
+	-> uma única especificação do projeto deve mudar a implementação de uma dada classe
+-> uma classe para cada parte/funcionalidade do programa
+-> mudanças impostas por pessoas diferentes, devem implicar em mudanças em classes diferentes
+
+-> juntar o que muda pela mesma razão/atores
+-> separar as coisas que mudam por razões/atores diferentes
+
+
+OCP = Open-closed Principle
+-> manter as classes estáveis mas tornar extensíveis
+-> estender funcionalidades de uma classe sem precisar modificar sua implementação
+-> sempre buscar pensar/antecipar o que acontece quando tenta extender a classe/sistema 
+
+
+LSP = Liskov Substitution Principle
+-> se um objeto tipo T consegue executas funções de um outro da classe S, T é um subtipo de S (como T sendo uma especializaçaõ)
+	-> quando não se faz isso, a herança está implementada de forma errada
+-> quando há herança bem implementada, deve poder usar uma classe derivada ao invés da primitiva e ainda assim o sistema funcionar
+	-> pode ter uma mudança na classe do filho, mas ainda assim vai continuar funcionando corretamente 
+	-> não se comporta de forma anomala ao substituir
+-> quer garantir que métodos se comportam como esperado
+
+-> é habilitador para OCP
+-> guia modelagem de herança
+-> é um dos princípios mais importantes
+
+---------
+Para a entrega do UML do trabalho do jogo
+-> primeiro fazer modelagem sem SOLID (entregar assim mesmo, sem SOLID)
+	-> pode mandar os dois, mas necessariamente mandar um sem (requer mais trabalho e compreensão do sistema e do SOLID)
+---------	
+	
+ISP = Interface Segregation Principle
+-> cliente não deve ser forçado a depender de métodos que não usa
+-> decompor intefaces complexas em menores
+-> reduz criação de dependências desnecessárias
+
+
+---------
+=> interfaces apenas permitem definir uma funcionalidade, sem implementar
+=> classes abstratas permrtem criar funcionalidades que as derivadas podem depois sobrescrever ou então implementar
+---------
+
+DIP = Dependency Inversion Principle
+-> dependencia deve ocorrer entre abstrações, não em implementações (concretas)
+-> módulos de alto nível não devem depender de módulos de baixo nivel, ambos devem depender de abstrações
+-> abstraões não devem depender de detalhes, mas detalhes depender de abstrações
+
+-> interface que quebra a lógica de dependencias para melhorar a implementação
+
+
+
+
+
+
