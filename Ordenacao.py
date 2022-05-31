@@ -4,8 +4,7 @@
 """
 
 
-class Ordenacao():
-
+class Ordenacao:
     def __init__(self, array_para_ordenar):
         """Recebe o array com o conteudo a ser ordenado"""
         self.array_para_ordenar = array_para_ordenar
@@ -15,16 +14,19 @@ class Ordenacao():
         for i in range(len(self.array_para_ordenar)):
             for j in range(i + 1, len(self.array_para_ordenar)):
                 if self.array_para_ordenar[i] > self.array_para_ordenar[j]:
-                    self.array_para_ordenar[i], self.array_para_ordenar[j] = self.array_para_ordenar[j], self.array_para_ordenar[i]
+                    self.array_para_ordenar[i], self.array_para_ordenar[j] = (
+                        self.array_para_ordenar[j],
+                        self.array_para_ordenar[i],
+                    )
 
         return self.array_para_ordenar
 
     def toString(self):
         """Converte o conteudo do array em String formatado
-           Exemplo: 
-           Para o conteudo do array: [1,2,3,4,5]
-           Retorna: "1,2,3,4,5"
-           @return String com o conteudo do array formatado
+        Exemplo:
+        Para o conteudo do array: [1,2,3,4,5]
+        Retorna: "1,2,3,4,5"
+        @return String com o conteudo do array formatado
         """
         string_array = ",".join(map(str, self.array_para_ordenar))
 

@@ -1,0 +1,85 @@
+Domain driven desing -> criar interfaces em tipo de usuário
+
+
+- Interface: pode ser como API Rest (interface com banco de dados e comunicação); interage com mundo externo
+    -> quando trata com usuário, é uma interface com o usuário
+
+    -> baseada em controle: CLIs; aplicação dita que informação é necessária e quando ser recolhida
+        -> CLI perguntar se deseja continuar
+    -> baseada em eventos: aplicação espera evento acontecer -> quando ocorre (dispara), responde e espera o próximo
+    
+    -> aplicações com interface gráfica baseada em janelas = GUI (graphical user interfaces), comumente orientada a eventos
+
+-> interface gráfica (eventos, modela janela)
+
+-> display server = serve janelas, elementos gráficos (lógica de display) e controlar janelas
+    X.Org (display server do Linux, def. resolução da tela, ...)
+    -> comunica com window manager (controla visibilidades, controle das janelas)
+        -> SO fornece os dois
+    -> define alguns elementos gráficos
+
+-> kernel (portas de comunicação, teclado, ...)
+-> hardware
+
+
+
+- Elementos de UI
+-> estilo dos widgets dependo do Widget toolkit (parte de lib de GUI, define como mostra botões e elementos)
+    -> pode variar no mesmo toolkit dependendo do SO
+    -> AWT, Tk (Tkinter), Qt (PyQt)
+
+-> frame/containers = divisões da janela
+    -> de forma hierárquica, frames contidos em outros
+
+
+- Layout
+-> modelo de layout baseado em grid e flexbox (como divs web?)
+    -> como dispor elementos na tela
+    -> Grid: para cada elemento, define linha e coluna que fica (def explicitamente, dá mais controle mas com mais trabalho)
+    -> flexbox: coloca elementos do lado do outro ou abaixo e depois arruma (CSS)
+        -> unidimensional (pode escolher qual direção)
+
+- POE (programação orientada a eventos)
+-> GUI são baseada em eventos (nao executa código quando é carregado, mas quando evento é disparado)
+    -> event handlers
+    -> eventos: on load, on click, on mouse up (botão do mouse solto), on key pressed, on mouse over (hover)
+
+
+
+
+PySimpleGUI
+-> biblioteca de GUI
+-> diferentes Toolkits (padrao = Tk)
+https://pysimplegui.readthedocs.io/en/latest/cookbook/    => interfaces modelo e como fazer
+-> layout = lista que contém uma lista para cada linha da interface
+
+
+.Text("Texto para mostrar na interface")    => label/text
+    , size=(espacoX, espacoY)
+        -> pode usar um texto com size(tamanho, tamanho2) e texto "" pra criar um espaço
+.InputText("placeholder", key="nomeKey")
+.Button("Nome dentro do Botão {é também nome do evento}")
+
+-> pode criar uma lista linha com elementos de uma linha
+    -> inserir em uma outra lista container geral
+
+window = sg.Window("Titulo da Janela", container{lista que foi criada antes}, font=("Fonte", tamanho))
+# loop de eventos
+rodando = True
+while rodando:
+    event, values = window.read()      => retorna eventos acontecidos e valores (chave e valor)
+    
+    if event == sg.WIN_CLOSED:
+        rodando = False
+    elif event == "nome dado dentro do botao":
+        ...
+        window.Element("nomeKeyElemento").Update(novoValor)   # atualizar dinamicamente valores de labels
+        
+
+
+- PySimleGui (controle de layout limitado, mas abstrai conceitos e é fácil de usar; bastante documentação e material)
+- ElectronJS
+- PyGame (lento e sem 3d, fácil de usar) -> tem PySimpleGui dentro dele
+- Unreal Engine / Unity
+
+-> assets nos slides da aula para o jogo
