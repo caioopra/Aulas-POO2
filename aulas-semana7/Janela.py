@@ -14,8 +14,14 @@ class Janela:
             sg.InputText("", key="altura"),
             sg.Text("metros"),
         ]
-        linha2 = [sg.Text("Seu IMC é"), sg.Text("", key="imc", size=(30, 1))]
-        linha3 = [sg.Text("", size=(25, 1)), sg.Button("Calcular IMC")]
+        linha2 = [
+            sg.Text("Seu IMC é"), 
+            sg.Text("", key="imc", size=(30, 1))
+        ]
+        linha3 = [
+            sg.Text("", size=(25, 1)), 
+            sg.Button("Calcular IMC")
+        ]
         container = [linha0, linha1, linha2, linha3]
 
         self.__window = sg.Window("Calculadora de IMC", container, font=("Arial", 14))
