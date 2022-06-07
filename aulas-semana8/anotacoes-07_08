@@ -1,0 +1,78 @@
+Usabilidade => UX/UI
+	-> UX: experiência de usuário ao usar a aplicação (interatividade, satisfação do usuário e testes de usabilidade)
+		-> métrica qualitativa; sem receita universal
+		-> cada empresa pode ter seu próprio conjunto de regras (apple (Humam interface guidelines) e Google: material.io)
+
+
+
+SERIALIZAÇÃO DE OBJETOS
+-> persistência
+-> dados e instruções carregados na memória RAM e enviados para CPU
+	-> memória volátil
+	-> heap + stack (áreas da memória)
+-> depende do tipo de informação que quer salvar para ser implementada (txt, db, ...)
+
+- Persistência
+-> persistir os dados mesmo que o sistema não esteja executando
+	-> recuperação em caso de erros
+	-> compartilhar estados internos dos objetos
+-> serialização => consegue transformar estados/estrutura de dados em string binária a ser lida depois
+	-> deserializar depois
+	-> duas operações:
+		load: ler arquivo para o programa
+		dump: salvar dados do programa para o arquivo
+		-> Python possui implementado
+-> biblioteca pickle:
+	-> implementa dump e load
+	pickle.dump(dicionario, nome_arquivo)
+	-> arquivos .pkl
+	
+arquivo_clientes = open("arquivo.pkl", "wb")		=> wb = escrita binária (dados transformados em uma única string binária)
+pickle.dump(dicionario, arquivo_clientes)		=> gera string binária do dicionario e escreve no arquivo
+arquivo_clientes.close()
+
+-> carregar os dados:
+arquivo_binario = open("arquivo.pkl", "rb")
+dicionario = pickle.load(arquivo_binario)
+
+
+- Criando classes persistentes
+-> definir o que quer que seja persistente (pontuação e progresso na história)
+
+-> classe que abstrai para o dev como acesso aos dados é feito => cria acesso aos dados da classe
+-> implementar operação para persistir o objeto (dump)
+-> implementar lógica do load
+-> implementar lógica de inserir e recuperar na lista controlada para acesso aos dados
+
+
+- Design Pattern: DAO (data access object)
+-> "template", como modelar classe para resolver problemas recorrentes
+-> classe abstrata DAO (cria um cliente que a acessa)
+	-> a usar se for usar serialização no jogo
+	
+	-> __dump e __load  (pode implementar na abstrata, porque é algo básico)
+	-> add (adiciona à uma coleção de objetos)
+	-> get (por chave, recupera info de objeto)	-> objetos devem ser indexáveis por chave (como id)
+	-> remove (por chave, remove da coleção)
+	-> get_all
+	
+	-> possui atributos datasource e objectCache (dicioário)
+-> implementa em uma classe concreta, customizando de acordo com os objetos (add, get e remove)
+-> se quiser criar para acessar outro tipo de objeto, implementa outro DAO concreto
+
+-> dumps podem ocorrer a medida que necessário, pode ser custoso de realizar 
+
+-> antipadrão (except: pass   -> como dev, não sabe que ocorreu algum erro ou problema)
+-> EAFP (easier to ask for forgivness than permission> mais barato deixar acontecer exceçaõ do que procurar se existe)
+
+LBYL x EAFP
+-> LBYL: look before you leap (foca em teste de pré-condição, mas leva mais tempo se tiver exceções raramente)
+	-> se o tipo de ocorrência for recorrente, usar esse
+-> EAFP (foca em try/catch, leva mais tempo se exceções são comuns)
+	-> usar quando exceção for incomum
+
+
+JSON Viewer (extensão)
+-> desafio: fazer o exercicio usando JSON
+
+
