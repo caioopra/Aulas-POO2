@@ -26,11 +26,11 @@ class DAO(ABC):
 
     def __load(self):
         with open(self.datasource, "rb") as arquivo:
-            pickle.load(arquivo)
+            self.__cache = pickle.load(arquivo)
 
     def add(self, chave, objeto):
         self.cache[chave] = objeto
-        self.__dump
+        self.__dump()
 
     def get(self, chave):
         if chave in self.cache.keys():

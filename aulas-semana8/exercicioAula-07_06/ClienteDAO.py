@@ -7,7 +7,7 @@ class ClienteDAO(DAO):
         super().__init__(arquivo)
     
     def add(self, cliente):
-        if isinstance(cliente, Cliente) and isinstance(Cliente.codigo, int):
+        if isinstance(cliente, Cliente) and isinstance(cliente.codigo, int):
             super().add(cliente.codigo, cliente)
     
     def get(self, key):
